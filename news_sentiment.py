@@ -17,7 +17,7 @@ finbert_model = pipeline("text-classification", model="ProsusAI/finbert", device
 zero_shot_model = pipeline("zero-shot-classification", model="facebook/bart-large-mnli", device=0)
 
 # NewsAPI client
-newsapi = NewsApiClient(api_key='50361a65c14e4cc18ead298679bdc2a5')
+newsapi = NewsApiClient(api_key='commented out')
 
 # ------------------------------
 # Persistent Cache Setup
