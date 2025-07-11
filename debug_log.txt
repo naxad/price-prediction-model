@@ -1,0 +1,155 @@
+2025-02-18 16:07:44,291 DEBUG: Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2025-02-18 16:07:44,422 DEBUG: Creating converter from 7 to 5
+2025-02-18 16:07:44,422 DEBUG: Creating converter from 5 to 7
+2025-02-18 16:07:44,422 DEBUG: Creating converter from 7 to 5
+2025-02-18 16:07:44,423 DEBUG: Creating converter from 5 to 7
+2025-02-18 16:07:45,988 DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2025-02-18 16:07:46,167 DEBUG: https://huggingface.co:443 "HEAD /ProsusAI/finbert/resolve/main/config.json HTTP/1.1" 200 0
+2025-02-18 16:07:46,404 DEBUG: https://huggingface.co:443 "HEAD /ProsusAI/finbert/resolve/main/model.safetensors HTTP/1.1" 404 0
+2025-02-18 16:07:46,409 DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2025-02-18 16:07:46,627 DEBUG: https://huggingface.co:443 "GET /api/models/ProsusAI/finbert HTTP/1.1" 200 4528
+2025-02-18 16:07:46,801 DEBUG: https://huggingface.co:443 "GET /api/models/ProsusAI/finbert/commits/main HTTP/1.1" 200 4974
+2025-02-18 16:07:46,818 DEBUG: https://huggingface.co:443 "HEAD /facebook/bart-large-mnli/resolve/main/config.json HTTP/1.1" 200 0
+2025-02-18 16:07:46,962 DEBUG: https://huggingface.co:443 "GET /api/models/ProsusAI/finbert/discussions?p=0 HTTP/1.1" 200 13030
+2025-02-18 16:07:47,137 DEBUG: https://huggingface.co:443 "GET /api/models/ProsusAI/finbert/commits/refs%2Fpr%2F10 HTTP/1.1" 200 5939
+2025-02-18 16:07:47,281 DEBUG: https://huggingface.co:443 "HEAD /ProsusAI/finbert/resolve/refs%2Fpr%2F10/model.safetensors.index.json HTTP/1.1" 404 0
+2025-02-18 16:07:47,446 DEBUG: https://huggingface.co:443 "HEAD /ProsusAI/finbert/resolve/refs%2Fpr%2F10/model.safetensors HTTP/1.1" 302 0
+2025-02-18 16:07:47,596 INFO: GPU configured (if available).
+2025-02-18 16:07:47,597 INFO: Feature columns: ['Open', 'High', 'Low', 'Close', 'Volume', 'News_Sentiment', 'Market_Volatility', 'SMA_20', 'SMA_50', 'EMA_20', 'EMA_50', 'RSI_14', 'MACD', 'MFI', 'ATR_14', 'Bollinger_Upper', 'Bollinger_Middle', 'Bollinger_Lower', 'ADX_14', 'HMM_Cum_Sentiment']
+2025-02-18 16:07:47,597 INFO: Fetching stock data...
+2025-02-18 16:07:47,597 DEBUG: Entering history()
+2025-02-18 16:07:47,599 DEBUG: ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-02-18 16:07:47,599 DEBUG: ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['AAPL', 1, 0])
+2025-02-18 16:07:47,638 DEBUG:  Entering history()
+2025-02-18 16:07:47,640 DEBUG: AAPL: Yahoo GET parameters: {'period1': '2005-01-01 00:00:00-05:00', 'period2': '2025-02-18 00:00:00-05:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-02-18 16:07:47,640 DEBUG:   Entering get()
+2025-02-18 16:07:47,640 DEBUG: url=https://query2.finance.yahoo.com/v8/finance/chart/AAPL
+2025-02-18 16:07:47,641 DEBUG: params=frozendict.frozendict({'period1': 1104555600, 'period2': 1739854800, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-02-18 16:07:47,641 DEBUG:    Entering _get_cookie_and_crumb()
+2025-02-18 16:07:47,641 DEBUG: cookie_mode = 'basic'
+2025-02-18 16:07:47,641 DEBUG:     Entering _get_cookie_and_crumb_basic()
+2025-02-18 16:07:47,642 DEBUG: ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-02-18 16:07:47,643 DEBUG: ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-02-18 16:07:47,643 DEBUG: loaded persistent cookie
+2025-02-18 16:07:47,643 DEBUG: reusing cookie
+2025-02-18 16:07:47,644 DEBUG: Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-02-18 16:07:47,809 DEBUG: https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-02-18 16:07:47,809 DEBUG: crumb = 'NGUtqV/n.sI'
+2025-02-18 16:07:47,810 DEBUG:     Exiting _get_cookie_and_crumb_basic()
+2025-02-18 16:07:47,810 DEBUG:    Exiting _get_cookie_and_crumb()
+2025-02-18 16:07:47,811 DEBUG: Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-02-18 16:07:48,054 DEBUG: https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/AAPL?period1=1104555600&period2=1739854800&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=NGUtqV%2Fn.sI HTTP/1.1" 200 None
+2025-02-18 16:07:48,180 DEBUG: response code=200
+2025-02-18 16:07:48,181 DEBUG:   Exiting get()
+2025-02-18 16:07:48,196 DEBUG: AAPL: yfinance received OHLC data: 2005-01-03 14:30:00 -> 2025-02-14 14:30:00
+2025-02-18 16:07:48,206 DEBUG: AAPL: OHLC after cleaning: 2005-01-03 09:30:00-05:00 -> 2025-02-14 09:30:00-05:00
+2025-02-18 16:07:48,360 DEBUG: AAPL: OHLC after combining events: 2005-01-03 00:00:00-05:00 -> 2025-02-14 00:00:00-05:00
+2025-02-18 16:07:48,397 DEBUG: AAPL: yfinance returning OHLC: 2005-01-03 00:00:00-05:00 -> 2025-02-14 00:00:00-05:00
+2025-02-18 16:07:48,398 DEBUG:  Exiting history()
+2025-02-18 16:07:48,398 DEBUG: Exiting history()
+2025-02-18 16:07:48,399 INFO: Data shape: (5063, 5)
+2025-02-18 16:07:48,400 INFO: Computing news sentiment...
+2025-02-18 16:11:48,128 DEBUG: Sample News Sentiment:
+Date
+2005-01-03 00:00:00-05:00    0.0
+2005-01-04 00:00:00-05:00    0.0
+2005-01-05 00:00:00-05:00    0.0
+2005-01-06 00:00:00-05:00    0.0
+2005-01-07 00:00:00-05:00    0.0
+Name: News_Sentiment, dtype: float64
+2025-02-18 16:11:48,147 INFO: Computing HMM sentiment (n_states=2, aggregator='ma')...
+2025-02-18 16:11:48,480 DEBUG: HMM Cum Sentiment sample:
+Date
+2005-03-16 00:00:00-05:00   NaN
+2005-03-17 00:00:00-05:00   NaN
+2005-03-18 00:00:00-05:00   NaN
+2005-03-21 00:00:00-05:00   NaN
+2005-03-22 00:00:00-05:00   NaN
+2005-03-23 00:00:00-05:00   NaN
+2005-03-24 00:00:00-05:00   NaN
+2005-03-28 00:00:00-05:00   NaN
+2005-03-29 00:00:00-05:00   NaN
+2005-03-30 00:00:00-05:00   NaN
+Name: HMM_Cum_Sentiment, dtype: float64
+2025-02-18 16:11:48,493 INFO: Data shape after dropna: (5000, 28)
+2025-02-18 16:11:48,508 INFO: X shape: (4940, 60, 20), y shape: (4940,)
+2025-02-18 16:11:48,509 INFO: Train size: (3952, 60, 20), Val size: (988, 60, 20)
+2025-02-18 16:11:48,509 INFO: Training regression model...
+2025-02-18 16:11:49,541 INFO: Training XGBoost...
+2025-02-18 16:12:17,210 INFO: Training RandomForest...
+2025-02-18 16:26:35,299 INFO: Building & training CNN model...
+2025-02-18 16:27:01,280 INFO: Building & training Hybrid model...
+2025-02-18 16:27:01,289 DEBUG: Creating converter from 3 to 5
+2025-02-18 16:27:01,297 DEBUG: Layer lstm will use cuDNN kernels when running on GPU.
+2025-02-18 16:27:01,308 DEBUG: Layer lstm_1 will use cuDNN kernels when running on GPU.
+2025-02-18 16:27:06,665 DEBUG: Creating converter from 5 to 3
+2025-02-18 16:28:13,219 INFO: Training Future Price Prediction Model...
+2025-02-18 16:28:13,570 INFO: Training ensemble meta-model (neural net)...
+2025-02-18 16:28:27,930 INFO: Checking sample predictions from Hybrid on validation set...
+2025-02-18 16:28:28,250 DEBUG: Sample Hybrid Predictions after inverse scaling: [119.79490323 119.38161812 120.27198867 121.47899533 121.64343074]
+2025-02-18 16:28:28,251 INFO: Forecasting future prices with the ensemble meta-model...
+2025-02-18 16:28:28,251 DEBUG: Tail of entire data:
+                                 Open        High         Low       Close    Volume  News_Sentiment  Market_Volatility  ...    STOCH_K    STOCH_D  Williams_%R    Return  HMM_State  HMM_Daily_Sentiment  HMM_Cum_Sentiment
+Date                                                                                                                    ...                                                                                                
+2025-02-10 00:00:00-05:00  229.570007  230.589996  227.199997  227.649994  33115600        0.021906           0.020328  ...  25.085629  29.393410   -70.400372  0.001187          0                    1                1.0
+2025-02-11 00:00:00-05:00  228.199997  235.229996  228.130005  232.619995  53718400        0.000000           0.020876  ...  36.170153  30.390718   -55.524628  0.021832          0                    1                1.0
+2025-02-12 00:00:00-05:00  231.199997  236.960007  230.679993  236.869995  45243300        0.000000           0.021239  ...  61.450912  40.902231   -39.020859  0.018270          0                    1                1.0
+2025-02-13 00:00:00-05:00  236.910004  242.339996  235.570007  241.529999  53614100        0.000000           0.021238  ...  87.352682  61.657916   -23.241914  0.019673          0                    1                1.0
+2025-02-14 00:00:00-05:00  241.250000  245.550003  240.990005  244.600006  40838100        0.000000           0.018986  ...  96.211450  81.671681   -10.800696  0.012711          0                    1                1.0
+
+[5 rows x 28 columns]
+2025-02-18 16:28:28,309 DEBUG: Data final row => Close=244.6000, date=2025-02-14 00:00:00-05:00
+2025-02-18 16:28:28,311 DEBUG: DEBUG: After slicing last_sequence_raw => final row Close=244.6000, date=2025-02-14 00:00:00-05:00
+2025-02-18 16:28:28,314 DEBUG: DEBUG: Setting initial predicted price to final row’s Close=244.6000 on date=2025-02-14 00:00:00-05:00
+2025-02-18 16:28:28,456 DEBUG: Day 1: Hybrid=0.9109, CNN=0.7310, XGB=0.5033, RF=0.5228
+2025-02-18 16:28:28,540 DEBUG: Day 1 => predicted price=229.1198 for 2025-02-17 00:00:00-05:00
+2025-02-18 16:28:28,661 DEBUG: Day 2: Hybrid=0.9101, CNN=0.8687, XGB=0.5023, RF=0.5227
+2025-02-18 16:28:28,712 DEBUG: Day 2 => predicted price=229.4053 for 2025-02-18 00:00:00-05:00
+2025-02-18 16:28:28,835 DEBUG: Day 3: Hybrid=0.9048, CNN=0.4935, XGB=0.5030, RF=0.5222
+2025-02-18 16:28:28,888 DEBUG: Day 3 => predicted price=227.2264 for 2025-02-19 00:00:00-05:00
+2025-02-18 16:28:29,027 DEBUG: Day 4: Hybrid=0.9039, CNN=0.3957, XGB=0.5026, RF=0.5222
+2025-02-18 16:28:29,080 DEBUG: Day 4 => predicted price=226.8507 for 2025-02-20 00:00:00-05:00
+2025-02-18 16:28:29,210 DEBUG: Day 5: Hybrid=0.9047, CNN=0.6291, XGB=0.5026, RF=0.5225
+2025-02-18 16:28:29,266 DEBUG: Day 5 => predicted price=227.5837 for 2025-02-21 00:00:00-05:00
+2025-02-18 16:28:29,396 DEBUG: Day 6: Hybrid=0.9047, CNN=0.4757, XGB=0.5034, RF=0.5231
+2025-02-18 16:28:29,452 DEBUG: Day 6 => predicted price=227.1168 for 2025-02-24 00:00:00-05:00
+2025-02-18 16:28:29,579 DEBUG: Day 7: Hybrid=0.9044, CNN=1.0454, XGB=0.5058, RF=0.5227
+2025-02-18 16:28:29,630 DEBUG: Day 7 => predicted price=228.3125 for 2025-02-25 00:00:00-05:00
+2025-02-18 16:28:29,752 DEBUG: Day 8: Hybrid=0.9046, CNN=0.7953, XGB=0.5053, RF=0.5222
+2025-02-18 16:28:29,802 DEBUG: Day 8 => predicted price=227.5507 for 2025-02-26 00:00:00-05:00
+2025-02-18 16:28:29,927 DEBUG: Day 9: Hybrid=0.9040, CNN=0.8477, XGB=0.5030, RF=0.5214
+2025-02-18 16:28:29,976 DEBUG: Day 9 => predicted price=227.8447 for 2025-02-27 00:00:00-05:00
+2025-02-18 16:28:30,101 DEBUG: Day 10: Hybrid=0.9034, CNN=0.7741, XGB=0.5019, RF=0.5217
+2025-02-18 16:28:30,153 DEBUG: Day 10 => predicted price=227.6974 for 2025-02-28 00:00:00-05:00
+2025-02-18 16:28:30,281 DEBUG: Day 11: Hybrid=0.9027, CNN=0.7766, XGB=0.5035, RF=0.5212
+2025-02-18 16:28:30,331 DEBUG: Day 11 => predicted price=227.3035 for 2025-03-03 00:00:00-05:00
+2025-02-18 16:28:30,473 DEBUG: Day 12: Hybrid=0.9019, CNN=1.1186, XGB=0.5018, RF=0.5212
+2025-02-18 16:28:30,525 DEBUG: Day 12 => predicted price=228.4317 for 2025-03-04 00:00:00-05:00
+2025-02-18 16:28:30,642 DEBUG: Day 13: Hybrid=0.9021, CNN=0.7687, XGB=0.5017, RF=0.5214
+2025-02-18 16:28:30,694 DEBUG: Day 13 => predicted price=227.3993 for 2025-03-05 00:00:00-05:00
+2025-02-18 16:28:30,819 DEBUG: Day 14: Hybrid=0.9021, CNN=1.1493, XGB=0.5033, RF=0.5216
+2025-02-18 16:28:30,869 DEBUG: Day 14 => predicted price=228.4395 for 2025-03-06 00:00:00-05:00
+2025-02-18 16:28:30,995 DEBUG: Day 15: Hybrid=0.9019, CNN=0.9307, XGB=0.5057, RF=0.5212
+2025-02-18 16:28:31,045 DEBUG: Day 15 => predicted price=227.2721 for 2025-03-07 00:00:00-05:00
+2025-02-18 16:28:31,170 DEBUG: Day 16: Hybrid=0.9009, CNN=1.3845, XGB=0.5029, RF=0.5217
+2025-02-18 16:28:31,228 DEBUG: Day 16 => predicted price=229.5840 for 2025-03-10 01:00:00-04:00
+2025-02-18 16:28:31,355 DEBUG: Day 17: Hybrid=0.9014, CNN=1.2334, XGB=0.5020, RF=0.5222
+2025-02-18 16:28:31,406 DEBUG: Day 17 => predicted price=228.7692 for 2025-03-11 01:00:00-04:00
+2025-02-18 16:28:31,524 DEBUG: Day 18: Hybrid=0.9013, CNN=1.3494, XGB=0.5014, RF=0.5215
+2025-02-18 16:28:31,574 DEBUG: Day 18 => predicted price=229.5911 for 2025-03-12 01:00:00-04:00
+2025-02-18 16:28:31,701 DEBUG: Day 19: Hybrid=0.9012, CNN=1.6389, XGB=0.4992, RF=0.5215
+2025-02-18 16:28:31,751 DEBUG: Day 19 => predicted price=232.0544 for 2025-03-13 01:00:00-04:00
+2025-02-18 16:28:31,876 DEBUG: Day 20: Hybrid=0.9027, CNN=1.4222, XGB=0.4979, RF=0.5218
+2025-02-18 16:28:31,930 DEBUG: Day 20 => predicted price=230.8742 for 2025-03-14 01:00:00-04:00
+2025-02-18 16:28:32,070 DEBUG: Day 21: Hybrid=0.9033, CNN=1.3590, XGB=0.4984, RF=0.5227
+2025-02-18 16:28:32,121 DEBUG: Day 21 => predicted price=230.5094 for 2025-03-17 01:00:00-04:00
+2025-02-18 16:28:32,241 DEBUG: Day 22: Hybrid=0.9028, CNN=1.1918, XGB=0.4990, RF=0.5228
+2025-02-18 16:28:32,291 DEBUG: Day 22 => predicted price=229.2926 for 2025-03-18 01:00:00-04:00
+2025-02-18 16:28:32,419 DEBUG: Day 23: Hybrid=0.9011, CNN=1.3293, XGB=0.4988, RF=0.5231
+2025-02-18 16:28:32,469 DEBUG: Day 23 => predicted price=229.7699 for 2025-03-19 01:00:00-04:00
+2025-02-18 16:28:32,604 DEBUG: Day 24: Hybrid=0.9004, CNN=1.4062, XGB=0.4993, RF=0.5236
+2025-02-18 16:28:32,656 DEBUG: Day 24 => predicted price=230.1600 for 2025-03-20 01:00:00-04:00
+2025-02-18 16:28:32,658 DEBUG: Future predictions (first 5): [244.60000610351562, 229.11980219160793, 229.40532536243836, 227.22639095160136, 226.85070095202258]
+2025-02-18 16:28:32,659 INFO: Perform feature importance analysis if needed (SHAP, meta-model weights, etc.)
+2025-02-18 16:28:32,659 INFO: Plotting final results...
+2025-02-18 16:28:36,707 INFO: Completed main.py execution. Check 'debug_log.txt' for full debug logs.
